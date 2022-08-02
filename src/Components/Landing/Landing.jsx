@@ -1,4 +1,5 @@
 import React from 'react'
+import './Landing.css'
 import Datebar from '../Datebar/Datebar'
 
 function Landing() {

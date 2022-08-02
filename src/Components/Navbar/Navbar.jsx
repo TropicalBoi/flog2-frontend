@@ -8,14 +8,17 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
       <div className='Navbar'>
-        <img className='AddButton' src={AddButton} />
-        <Link to = '/'> 
-        <img className='HomeButton' src={HomeButton} />
+        <Link to='/Activities' className='AddButton'>
+          <img className='NavBarIcon' src={AddButton} />
+        </Link>
+
+        <Link to='/' className='HomeButton'> 
+          <img className='NavBarIcon' src={HomeButton} alt=""/>
         </Link>
        
-        <Link to = '/ProfileUser'>
+        <Link to='/ProfileUser'>
         <div className='ProfilePic'>
-            <img className='UserPic' src={ProfilePic} alt="" />    
+            <img className='NavBarIcon' src={ProfilePic} alt="" />    
         </div>
         </Link>
         

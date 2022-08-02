@@ -1,4 +1,5 @@
 import { React , useState , useEffect } from "react";
+import './DateNow.css'
 
 const DateNow = () => {
 
@@ -7,20 +8,21 @@ const DateNow = () => {
 
     const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
-    const [date, setDate] = useState(new DateNow());
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {
-        var timerID = setInterval( () =>setDate(new DateNow()), 1000 );
+        var timerID = setInterval( () =>setDate(new Date()), 1000 );
         return function cleanup() {
             clearInterval(timerID);
           };
        });
      return (
-          <div>
-          {days[date.getDay()]}&nbsp;
-          {date.getDate()}&nbsp;
-          {monthNames[date.getMonth()]}&nbsp;
-          {date.getFullYear()}
+
+          <div className="DateNow">
+            {days[date.getDay()]},&nbsp;
+            {date.getDate()}&nbsp;
+            {monthNames[date.getMonth()]}&nbsp;
+            {date.getFullYear()}
           </div>
         
       );

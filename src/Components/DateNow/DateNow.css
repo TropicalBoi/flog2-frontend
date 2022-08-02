@@ -1,0 +1,15 @@
+.DateNow{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 22.39vw;
+  height: 6.969vh;
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  padding-left: 0.5vw;
+  color: #438BBF;
+}

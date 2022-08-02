@@ -1,0 +1,17 @@
+.DateBar {
+  width: 100%;
+  height: 6vh;
+  min-height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-self: center;
+}
+
+.CarlendarIcon {
+  width: auto;
+  height: 4vh;
+  margin: 1vh 20px 1vh 0;
+  display: flex;
+  min-height: 30px;
+}

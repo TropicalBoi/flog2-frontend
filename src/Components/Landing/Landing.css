@@ -1,5 +1,14 @@
 .Landing {
-    background-color: #F0F4F9;
+    display: block;
+    max-width: 1920px;
+    margin: 6vh auto 0px auto;
     width: 100vw;
     height: 100vh;
+
+    
+}
+.LandingData{
+    display: flex;
+    flex-direction: row;
+    
 }

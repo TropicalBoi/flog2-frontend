@@ -1,0 +1,11 @@
+.ActivityPost{
+    background-color: red;
+    margin: 1vh 0 1vh 10px;
+    width: 25%;
+    height: auto;
+}
+.ActivityPostBox{
+    display: flex;
+    height: auto;
+    margin: 1vh 0 1vh 10px;
+}

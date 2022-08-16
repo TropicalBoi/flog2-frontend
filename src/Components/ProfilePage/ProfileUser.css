@@ -1,9 +1,10 @@
 .ProfileUser {
     display: flex;
+    max-width: 1280px;
     width: 100vw;
     height: 100vh;
+    margin: 6vh auto 0px auto;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: white;
 }
@@ -17,6 +18,7 @@
 .ProfileUserPic{
     width: 100%;
     height: 100%;
+    
     object-fit: cover;
 }
 .ProfileForm form {

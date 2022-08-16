@@ -11,7 +11,7 @@
 .CarlendarIcon {
   width: auto;
   height: 4vh;
-  margin: 1vh 20px 1vh 0;
+  margin: 1vh 10px 1vh 10px;
   display: flex;
   min-height: 30px;
 }

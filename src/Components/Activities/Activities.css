@@ -1,5 +1,10 @@
 .ActivitiesPage {
+  max-width: 1280px;
   width: 100vw;
   height: 100vh;
-  background-color: silver;
+  margin: 6vh auto 0px auto;
+}
+.ActivitiesPage1{
+  display: flex;
+  flex-direction: row;
 }

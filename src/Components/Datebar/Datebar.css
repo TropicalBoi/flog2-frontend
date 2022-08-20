@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-self: center;
+  margin: 6vh auto 0px auto;
 }
 
 .CarlendarIcon {

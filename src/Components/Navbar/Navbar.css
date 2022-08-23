@@ -1,5 +1,5 @@
 .Navbar {
-    width: 100%;
+    width: 100vw;
     height: 6vh;
     background-color: #1A9D9D;
     display:flex;

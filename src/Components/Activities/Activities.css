@@ -1,12 +1,14 @@
 .ActivitiesPage {
   max-width: 1920px;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
   margin: 6vh auto 0px auto;
   background-color: #F0F4F9;
  
 }
-.ActivitiesPage1{
+.ActivitiesPageData{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }

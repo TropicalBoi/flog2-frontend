@@ -1,19 +1,23 @@
-import React from 'react';
-import './ActivityPost.css'
+import React from "react";
+import "./ActivityPost.css";
+
 
 function ActivityPost() {
-    return (
-        <div className='ActivityPost'>
-            
-            <div className='ActivityPostBox'>
-                <p>hello</p>
-            </div>
-            <div>
-                <button>Post</button>
-            </div>
+  return (
+    <div className="ActivityPost">
+      <div className="ActivityPostBox">
+        <p>How's your work out?</p>
+      </div>
+      <div className="StatusForm">
+        <form></form>
+      </div>
+      <div>
+        <button>Post</button>
+      </div>
 
-        </div>
-    )
+
+    </div>
+  );
 }
 
-export default ActivityPost
+export default ActivityPost;

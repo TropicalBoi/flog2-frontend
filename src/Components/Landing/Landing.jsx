@@ -17,7 +17,7 @@ function Landing() {
         },
         {
           name: "Weight",
-          duration: " 15",
+          duration: "15",
         },
       ],
       msg: "ไม่อยากวิ่งแล้ว!",
@@ -69,7 +69,6 @@ function Landing() {
   return (
     <div className="Landing">
       <Datebar />
-
       <div className="LandingData">
         <ProfileLanding />
         <StatusList statusList={initialStatusList} />

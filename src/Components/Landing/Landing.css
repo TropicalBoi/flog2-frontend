@@ -1,13 +1,18 @@
 .Landing {
-    display: block;
-    max-width: 1920px;
-    margin: 0 auto;
-    width: 80vw;
-    height: 100vh;
-    overflow: clip;
+  display: block;
+  max-width: 1920px;
+  margin: 0 auto;
+  width: 80vw;
+  height: 94vh;
 }
-.LandingData{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.LandingData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 428px) {
+  .LandingData {
+    flex-direction: column;
+  }
 }

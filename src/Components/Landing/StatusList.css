@@ -1,0 +1,11 @@
+.StatusList{
+  height: 88vh;
+  width: fit-content;
+  overflow: scroll;
+}
+
+@media screen and (max-width: 428px) {
+  .StatusList{
+    height: 48vh;
+  }
+}

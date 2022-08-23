@@ -1,7 +1,7 @@
 import {React , useState } from "react";
 import "./ProfileUser.css";
 import ProfilePic from "./ProfilePic.jpg";
-import ProfileFrom from "./ProfileFrom";
+import ProfileForm from "./ProfileForm";
 import Datebar from "../Datebar/Datebar";
 
 function ProfileUser() {
@@ -21,7 +21,7 @@ function ProfileUser() {
       <form>
         <input type="file" onChange={onImageChange} />
       </form>
-      <ProfileFrom />
+      <ProfileForm />
     </div>
   );
 }

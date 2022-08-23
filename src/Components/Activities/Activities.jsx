@@ -11,7 +11,7 @@ function Activities() {
             <div>
             <Datebar />    
             </div>
-            <div className='ActivitiesPage1'>
+            <div className='ActivitiesPageData'>
                 <ActivitySelect />
                 <ActivityPost />
             </div>

@@ -10,7 +10,7 @@
 }
 .ActivitiesCard {
   width: 16vw;
-  height: 16vw;
+  height: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,6 +86,21 @@
   font-weight: 500;
   cursor: pointer;
   background-color: white;
+  color: #0fca5a;
+  padding: 0;
+  line-height: 1;
+}
+
+.Loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Loading p {
+  font-size: 5vw;
   color: #0fca5a;
 }
 

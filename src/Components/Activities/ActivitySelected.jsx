@@ -4,31 +4,49 @@ import "./ActivitySelected.css";
 import { css } from "@emotion/css";
 import Popup from "./PopUp";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
-function ActivitySelect() {
-  const initialActivities = [
-    {
-      id: 1,
-      img: `https://img.youtube.com/vi/JvKJ53kWQrE/maxresdefault.jpg`,
-      name: "Aerobic",
-      duration: "20",
-      isDone: true,
-    },
-    {
-      id: 2,
-      img: Warmup,
-      name: "Warm up body",
-      duration: "10",
-      isDone: false,
-    },
-    {
-      id: 3,
-      img: `https://img.youtube.com/vi/JvKJ53kWQrE/maxresdefault.jpg`,
-      name: "Aerobic",
-      duration: "15",
-      isDone: false,
-    },
-  ];
+function ActivitySelect(props) {
+  // const initialActivities = [
+  //   {
+  //     id: 1,
+  //     img: `https://img.youtube.com/vi/JvKJ53kWQrE/maxresdefault.jpg`,
+  //     name: "Aerobic",
+  //     duration: "20",
+  //     isDone: true,
+  //   },
+  //   {
+  //     id: 2,
+  //     img: Warmup,
+  //     name: "Warm up body",
+  //     duration: "10",
+  //     isDone: false,
+  //   },
+  //   {
+  //     id: 3,
+  //     img: `https://img.youtube.com/vi/JvKJ53kWQrE/maxresdefault.jpg`,
+  //     name: "Aerobic",
+  //     duration: "15",
+  //     isDone: false,
+  //   },
+  // ];
+
+  const [activity, setActivity] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
+  const [buttonPopup, setButtonPopup] = useState(false);
+
+  const fetch = async () => {
+    const data = await axios.get(
+      "https://flog2-backend.herokuapp.com/exercises/"
+    );
+    setActivity(data.data);
+  };
+
+  useEffect(() => {
+    fetch();
+  }, []);
 
   const {
     register,
@@ -37,15 +55,45 @@ function ActivitySelect() {
     handleSubmit,
   } = useForm();
 
-  const watchYoutube = watch("chooseStyle", false);
+  // const watchYoutube = watch("chooseStyle", false);
 
-  const onSubmit = (data) => alert(JSON.stringify({...data, isDone: false}));
+  const onSubmit = async (data) => {
+    setButtonPopup(false);
+    setLoading(true);
+    await axios.post(
+      "https://flog2-backend.herokuapp.com/exercises/add/",
+      {
+        ...data,
+        isDone: false,
+      }
+    );
+    await fetch();
+    setLoading(false);
+  };
 
-  const [buttonPopup, setButtonPopup] = useState(false);
+  const onClickDone = async (data) => {
+    setLoading(true);
+    await axios.post(`https://flog2-backend.herokuapp.com/exercises/update/${data._id}/`,
+    {
+      ...data,
+      isDone: true,
+    }
+    );
+    await fetch();
+    setLoading(false);
+  };
 
-  return (
+  // alert(JSON.stringify({...data, isDone: false}));
+
+  
+
+  return loading ? (
+    <div className="Loading">
+      <p>updating.....</p>
+    </div>
+  ) : (
     <div className="ActivitiesSelect">
-      {initialActivities.map((ActivitiesDetails) => {
+      {activity.map((ActivitiesDetails) => {
         return (
           <div
             className={css`
@@ -65,21 +113,24 @@ function ActivitySelect() {
               ${ActivitiesDetails.isDone
                 ? "background-color: rgba(15, 202, 90, 0.12);"
                 : "background-color: white;"}
-              
             `}
           >
-            <div className="ActivitiesImg">
+            {/* <div className="ActivitiesImg">
               <img src={ActivitiesDetails.img} />
-            </div>
+            </div> */}
             <div className="ActivitiesTitle">
-              <p>{ActivitiesDetails.name}</p>
+              <p>{ActivitiesDetails.description}</p>
               <p>{ActivitiesDetails.duration} mins</p>
             </div>
             {ActivitiesDetails.isDone && (
-              <button className="AddToPost"><p>Add to post</p></button>
+              <button className="AddToPost" onClick={() => props.addToPost(ActivitiesDetails)}>
+                <p>Add to post</p>
+              </button>
             )}
             {!ActivitiesDetails.isDone && (
-              <button className="Done"><p>Done</p></button>
+              <button className="Done" onClick={() => {onClickDone(ActivitiesDetails)}}>
+                <p>Done</p>
+              </button>
             )}
           </div>
         );
@@ -95,15 +146,15 @@ function ActivitySelect() {
               <b>Activity</b>
             </label>
             <input
-              {...register("desciption", {
+              {...register("description", {
                 required: true,
               })}
             />
-            {errors?.activityName?.type === "required" && (
+            {errors?.description?.type === "required" && (
               <p>This field is required</p>
             )}
           </div>
-          <div className="ChooseStyleBox">
+          {/* <div className="ChooseStyleBox">
             <label>
               <b>Choose your style</b>
             </label>
@@ -122,7 +173,7 @@ function ActivitySelect() {
                   value="yourStyle"
                   {...register("chooseStyle")}
                 />
-                <p>Choose your style</p>
+                <p>Do it your way</p>
               </div>
             </div>
             {watchYoutube === "youtube" && (
@@ -135,10 +186,12 @@ function ActivitySelect() {
                 <input {...register("yourStyle")} />
               </>
             )}
-          </div>
+          </div> */}
 
           <div className="chooseDuration">
-            <label><b>Duration</b></label>
+            <label>
+              <b>Duration</b>
+            </label>
             <input type="number" {...register("duration", { min: 1 })} />
             {errors.duration && <p>{"Atleast it should be 1 minutes!"}</p>}
           </div>

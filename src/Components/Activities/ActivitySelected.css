@@ -61,6 +61,7 @@
   font-size: 1.5vw;
   margin: 0.5vh 0;
   line-height: 1.8vh;
+  padding: 1vh 2vw;
 }
 
 .Done {
@@ -70,6 +71,7 @@
   font-size: 1.5vw;
   margin: 0.5vh 0;
   line-height: 1.8vh;
+  padding: 1vh 2vw;
 }
 
 .ActivitiesSelect p {
@@ -85,4 +87,37 @@
   cursor: pointer;
   background-color: white;
   color: #0fca5a;
+}
+
+@media screen and (max-width: 428px) {
+  .ActivitiesSelect {
+    width: 100%;
+    height: 60vh;
+    overflow-x: clip;
+    overflow-y: scroll;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .ActivitiesImg{
+    height: 20vh;
+  }
+  
+  .ActivitiesTitle {
+    margin: 1vh 0;
+  }
+
+  .ActivitiesSelect p {
+    font-size: 5vw;
+    line-height: 1.8vh;
+  }
+  
+  .AddToPost {
+    width: 80%;
+  }
+
+  .Done {
+    width: 80%;
+  }
 }

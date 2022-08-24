@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Warmup from "./warmup.jpg";
 import "./ActivitySelected.css";
 import { css } from "@emotion/css";
 import Popup from "./PopUp";
+import { useForm } from "react-hook-form";
 
 function ActivitySelect() {
   const initialActivities = [
@@ -29,7 +30,16 @@ function ActivitySelect() {
     },
   ];
 
-  // <Status status={status} key={status.id}/>
+  const {
+    register,
+    watch,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
+  const watchYoutube = watch("chooseStyle", false);
+
+  const onSubmit = (data) => alert(JSON.stringify({...data, isDone: false}));
 
   const [buttonPopup, setButtonPopup] = useState(false);
 
@@ -48,9 +58,14 @@ function ActivitySelect() {
               margin: 0 1vw 4vh 1vw;
               border-radius: 1vw;
               box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+              @media (max-width: 428px) {
+                width: 80%;
+                border-radius: 3vw;
+              }
               ${ActivitiesDetails.isDone
                 ? "background-color: rgba(15, 202, 90, 0.12);"
                 : "background-color: white;"}
+              
             `}
           >
             <div className="ActivitiesImg">
@@ -61,21 +76,75 @@ function ActivitySelect() {
               <p>{ActivitiesDetails.duration} mins</p>
             </div>
             {ActivitiesDetails.isDone && (
-              <button className="AddToPost">Add to post</button>
+              <button className="AddToPost"><p>Add to post</p></button>
             )}
             {!ActivitiesDetails.isDone && (
-              <button className="Done">Done</button>
+              <button className="Done"><p>Done</p></button>
             )}
           </div>
         );
       })}
       <div className="ActivitiesCard">
-        <button className="AddButton" onClick={() => setButtonPopup(true)}>+</button>{" "}
+        <button onClick={() => setButtonPopup(true)}>+</button>{" "}
       </div>
 
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <h3>My popup</h3>
-        <p>This is my popup</p>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="ActivityBox">
+            <label>
+              <b>Activity</b>
+            </label>
+            <input
+              {...register("desciption", {
+                required: true,
+              })}
+            />
+            {errors?.activityName?.type === "required" && (
+              <p>This field is required</p>
+            )}
+          </div>
+          <div className="ChooseStyleBox">
+            <label>
+              <b>Choose your style</b>
+            </label>
+            <div className="TwoStyles">
+              <div className="EachStyle">
+                <input
+                  type="radio"
+                  value="youtube"
+                  {...register("chooseStyle")}
+                />
+                <p>Follow youtube</p>
+              </div>
+              <div className="EachStyle">
+                <input
+                  type="radio"
+                  value="yourStyle"
+                  {...register("chooseStyle")}
+                />
+                <p>Choose your style</p>
+              </div>
+            </div>
+            {watchYoutube === "youtube" && (
+              <>
+                <input {...register("youtubeLink")} />
+              </>
+            )}
+            {watchYoutube === "yourStyle" && (
+              <>
+                <input {...register("yourStyle")} />
+              </>
+            )}
+          </div>
+
+          <div className="chooseDuration">
+            <label><b>Duration</b></label>
+            <input type="number" {...register("duration", { min: 1 })} />
+            {errors.duration && <p>{"Atleast it should be 1 minutes!"}</p>}
+          </div>
+
+          <input type="submit" value="CREATE" />
+        </form>
       </Popup>
     </div>
   );

@@ -5,16 +5,17 @@ function Status(props) {
   return (
     <div className="temp">
       <div className="Status">
-        <div className="ActivityImg">
+        {/* <div className="ActivityImg">
           <img src={props.status.img} />
-        </div>
+        </div> */}
         <div className="ActivityData">
+          <p>{props.status.username}</p>
           <p>
             {props.status.activities.map((activityDetail) => {
               return (
                 <div>
                   <p activityDetail={activityDetail}>
-                    {activityDetail.name},{activityDetail.duration} mins
+                    {activityDetail.description}, {activityDetail.duration} mins
                   </p>
                 </div>
               );

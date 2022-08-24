@@ -12,3 +12,9 @@
   justify-content: space-evenly;
   align-items: flex-start;
 }
+
+@media screen and (max-width: 428px) {
+  .ActivitiesPageData {
+    flex-direction: column;
+  }
+}

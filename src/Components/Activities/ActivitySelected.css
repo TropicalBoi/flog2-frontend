@@ -1,0 +1,138 @@
+.ActivitiesSelect {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 60vw;
+  height: auto;
+  align-items: center;
+  margin: 1vh 0 1vh 10px;
+  flex-wrap: wrap;
+}
+.ActivitiesCard {
+  width: 16vw;
+  height: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1vw 4vh 1vw;
+  background-color: white;
+  border-radius: 1vw;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  color: #0fca5a;
+  font-size: 5vw;
+}
+.ActivitiesImg {
+  width: 95%;
+  height: 14vw;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  border-radius: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin-top: 1vh;
+}
+
+.ActivitiesImg img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.ActivitiesTitle {
+  color: #0fca5a;
+  width: 95%;
+  height: 5vmin;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.ActivitiesTitle {
+  align-items: center;
+}
+.AddToPost {
+  background-color: rgb(66, 255, 66);
+  margin-bottom: 2vh;
+  width: 15vw;
+  font-size: 1.5vw;
+  margin: 0.5vh 0;
+  line-height: 1.8vh;
+  padding: 1vh 2vw;
+}
+
+.Done {
+  background-color: #1a9d9d;
+  margin-bottom: 2vh;
+  width: 15vw;
+  font-size: 1.5vw;
+  margin: 0.5vh 0;
+  line-height: 1.8vh;
+  padding: 1vh 2vw;
+}
+
+.ActivitiesSelect p {
+  font-size: 1.2vw;
+  margin: 0.5vh 0;
+  line-height: 1.8vh;
+}
+
+.ActivitiesCard button {
+  border: none;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: white;
+  color: #0fca5a;
+  padding: 0;
+  line-height: 1;
+}
+
+.Loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Loading p {
+  font-size: 5vw;
+  color: #0fca5a;
+}
+
+@media screen and (max-width: 428px) {
+  .ActivitiesSelect {
+    width: 100%;
+    height: 60vh;
+    overflow-x: clip;
+    overflow-y: scroll;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .ActivitiesImg{
+    height: 20vh;
+  }
+  
+  .ActivitiesTitle {
+    margin: 1vh 0;
+  }
+
+  .ActivitiesSelect p {
+    font-size: 5vw;
+    line-height: 1.8vh;
+  }
+  
+  .AddToPost {
+    width: 80%;
+  }
+
+  .Done {
+    width: 80%;
+  }
+}

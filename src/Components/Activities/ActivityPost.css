@@ -1,0 +1,93 @@
+.ActivityPost p {
+  font-size: 1.5vw;
+}
+
+.ActivityPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  margin: 1vh 0 1vh 10px;
+  width: 20vw;
+  height: fit-content;
+  border-radius: 1vw;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.ActivityPostBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 8%;
+  background-color: #1A9D9D;
+  border-radius: 1vw;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.doneActivities{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.addedActivity {
+  display: flex;
+  align-items: center;
+  background-color: #0fca5a;
+  border-radius: 1vw;
+  padding: 10px;
+  margin: 2px;
+  height: fit-content;
+}
+
+.addedActivity p {
+  font-size: 0.8vw;
+  color: white;
+  margin: 0;
+}
+
+.StatusForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.StatusForm input {
+  width: 17vw;
+  height: 15vh;
+}
+
+.StatusForm input[type=submit] {
+  width: 17vw;
+  height: fit-content;
+}
+
+@media screen and (max-width: 428px) {
+  .ActivityPost {
+    width: 100%;
+    height: 22vh;
+    border-radius: 2vw;
+  }
+
+  .ActivityPostBox {
+    height: 5vh;
+    border-radius: 2vw;
+  }
+
+  .ActivityPostBox p {
+    font-size: 4vw;
+  }
+
+  .StatusForm input {
+    width: 70vw;
+    height: 10vh;
+  }
+  
+  .StatusForm input[type=submit] {
+    width: 30vw;
+    height: fit-content;
+    font-size: 4vw;
+  }
+}

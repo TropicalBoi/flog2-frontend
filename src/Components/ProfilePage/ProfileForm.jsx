@@ -1,4 +1,5 @@
 import React from 'react'
+import "./ProfileForm.css";
 
 function ProfileFrom() {
     function BMI (weight,height){

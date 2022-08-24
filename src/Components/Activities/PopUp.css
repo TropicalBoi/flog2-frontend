@@ -1,0 +1,145 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: fit-content;
+  max-width: 640px;
+  background-color: #FFFFFF;
+  border-radius: 1vw;
+  color: #000000;
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+}
+
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  line-height: 0;
+  letter-spacing: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: rgb(255, 95, 95);
+  color: white;
+  width: 10px;
+  height: 24px;
+}
+
+input {
+  border: 2px solid #D5D4DC;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  height: 3vh;
+  width: 100%;
+  margin-top: 1vh;
+}
+
+
+label {
+  font-size: 1vw;
+}
+
+.ActivityBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 3vh;
+}
+
+.ChooseStyleBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 3vh;
+}
+
+.TwoStyles {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.EachStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vw;
+  border: 1px solid #D5D4DC ;
+  border-radius: 0.5vw;
+  margin: 1vh;
+  width: 90%;
+}
+
+.EachStyle p {
+  font-size: 0.8vw;
+}
+
+input[type=radio] {
+  width: 1vw;
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+.chooseDuration {
+  display: flex;
+  flex-direction: column;
+
+}
+
+input[type=number] {
+  width: 5vw;
+}
+
+input[type=submit] {
+  background-color: #1A9D9D;
+  color: white;
+  border-radius: 0.8vw;
+  font-size: 1.4vw;
+  height: fit-content;
+}
+
+@media screen and (max-width: 428px) {
+
+  .popup-inner b {
+    font-size: 4vw;
+  }
+
+  input[type=radio] {
+    width: 5vw;
+    margin-top: 0;
+    margin-right: 10px;
+  }
+
+  .EachStyle p {
+    font-size: 4vw;
+  }
+
+  input[type=number] {
+    width: 30vw;
+  }
+
+  input[type=submit] {
+    border-radius: 2vw;
+    font-size: 6vw;
+  }
+}
+

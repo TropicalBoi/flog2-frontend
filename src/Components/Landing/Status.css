@@ -1,0 +1,80 @@
+.temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #f0f4f9;
+  width: 50vw;
+}
+.Status {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  height: 25vh;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.ActivityImg {
+  width: 25vh;
+  height: 20vh;
+  margin: 0px 10px 0 20px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ActivityImg img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: center center; 
+}
+
+.ActivityData {
+  width: 100%;
+  height: 20vh;
+  border-radius: 20px;
+  margin: 0px 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ActivityData p {
+  color: black;
+  margin: 0;
+}
+
+@media screen and (max-width: 428px) {
+  .temp{
+    width: 80vw;
+  }
+
+  .Status {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 40vh;
+  }
+
+  .ActivityImg {
+    width: 90%;
+    margin: 10px 20px;
+  }
+
+  .ActivityImg img {
+    height: auto;
+    width: 100%;
+  }
+
+  .ActivityData {
+    margin-left: 10vw;
+  }
+
+}

@@ -70,7 +70,7 @@ function ActivitySelect() {
         );
       })}
       <div className="ActivitiesCard">
-        <button onClick={() => setButtonPopup(true)}>+</button>{" "}
+        <button className="AddButton" onClick={() => setButtonPopup(true)}>+</button>{" "}
       </div>
 
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>

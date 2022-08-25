@@ -1,11 +1,13 @@
 import React, {useState} from "react";
-import ProfilePic from "../ProfilePage/ProfilePic.jpg";
 import './Profile.css'
+import TengProfile from "../../assets/Teng.jpg";
+
+
 function ProfileLanding() {
   //database
   const userInfo = {
-    firstName:'Nam',
-    lastName: 'Jai',
+    firstName:'Err',
+    lastName: 'Elvis',
     weight: 50,
     height: 170,
     bmi:'bmi'
@@ -16,7 +18,7 @@ function ProfileLanding() {
   return (
     <div className="ProfileComponent">
         <div className='ProfileImg'>
-            <img src={ProfilePic} className='ImgDetail'/>
+            <img src={TengProfile} className='ImgDetail'/>
         </div>
         <div className='ProfileName'>
             <h1>{firstName} {lastName}</h1>

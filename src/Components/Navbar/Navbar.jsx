@@ -18,7 +18,7 @@ function Navbar() {
        
         <Link to='/ProfileUser'>
         <div className='ProfilePic'>
-            <img className='NavBarIcon' src={ProfilePic} alt="" />    
+            {/* <img className='NavBarIcon' src={ProfilePic} alt="" />     */}
         </div>
         </Link>
         

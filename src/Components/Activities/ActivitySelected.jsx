@@ -85,6 +85,13 @@ function ActivitySelect(props) {
 
   // alert(JSON.stringify({...data, isDone: false}));
 
+  const onClickDelete = async (data) => {
+    setLoading(true);
+    await axios.delete(`https://flog2-backend.herokuapp.com/exercises/${data._id}/`);
+    await fetch();
+    setLoading(false);
+  }
+
   
 
   return loading ? (
@@ -99,7 +106,7 @@ function ActivitySelect(props) {
             className={css`
               width: 16vw;
               height: fit-content;
-              display: flex;
+              display: flex;  
               flex-direction: column;
               justify-content: space-between;
               align-items: center;
@@ -115,6 +122,7 @@ function ActivitySelect(props) {
                 : "background-color: white;"}
             `}
           >
+            <div className="delete-container" onClick={() =>onClickDelete(ActivitiesDetails)}><button className="delete-btn">x</button></div>
             {/* <div className="ActivitiesImg">
               <img src={ActivitiesDetails.img} />
             </div> */}
@@ -128,7 +136,7 @@ function ActivitySelect(props) {
               </button>
             )}
             {!ActivitiesDetails.isDone && (
-              <button className="Done" onClick={() => {onClickDone(ActivitiesDetails)}}>
+              <button className="Done" onClick={() => onClickDone(ActivitiesDetails)}>
                 <p>Done</p>
               </button>
             )}

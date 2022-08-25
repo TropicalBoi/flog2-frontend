@@ -1,13 +1,14 @@
 import React from "react";
 import "./Status.css";
+import statusImg from '../../assets/Teng.jpg';
 
 function Status(props) {
   return (
     <div className="temp">
       <div className="Status">
-        {/* <div className="ActivityImg">
-          <img src={props.status.img} />
-        </div> */}
+        <div className="ActivityImg">
+          <img src={statusImg} />
+        </div>
         <div className="ActivityData">
           <p>{props.status.username}</p>
           <p>
